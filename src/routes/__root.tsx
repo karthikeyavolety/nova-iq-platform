@@ -80,10 +80,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "AURA IQ — Next-Generation AI Analytics Platform" },
       { name: "description", content: "AI-native analytics command center. Predict revenue, detect risk, and turn data into decisions." },
-      { property: "og:title", content: "AURA IQ" },
-      { property: "og:description", content: "AI-native analytics command center." },
+      { property: "og:title", content: "AURA IQ — Next-Generation AI Analytics Platform" },
+      { property: "og:description", content: "AI-native analytics command center. Predict revenue, detect risk, and turn data into decisions." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "AURA IQ — Next-Generation AI Analytics Platform" },
+      { name: "twitter:description", content: "AI-native analytics command center. Predict revenue, detect risk, and turn data into decisions." },
     ],
     links: [
       {
