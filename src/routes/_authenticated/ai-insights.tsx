@@ -1,4 +1,4 @@
-import { createFileRoute, useRouter } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { AppShell } from "@/components/app-shell";
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/_authenticated/ai-insights")({
 
 function AIInsightsPage() {
   const fetchInsights = useServerFn(generateAIInsights);
-  const router = useRouter();
+  
   const { data, isFetching, refetch } = useQuery({
     queryKey: ["ai-insights"],
     queryFn: () => fetchInsights(),
@@ -158,10 +158,8 @@ function AIInsightsPage() {
           </div>
         </Card>
 
-        {!data && (
-          <p className="text-center text-xs text-muted-foreground">
-            Tap Regenerate if results don't load. {router ? "" : ""}
-          </p>
+        {!data && !isFetching && (
+          <p className="text-center text-xs text-muted-foreground">Tap Regenerate to analyze.</p>
         )}
       </div>
     </AppShell>
